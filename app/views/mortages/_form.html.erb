@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    Saisissez votre demande de prêt
+  </div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <%= form_for @mortage, html: {multipart: true} do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>1. Agent Axa referent sur le prêt</label>
+            <%= f.select :referer, ["Damien Courrèges", "Almami Al Bundi", "Autre"], class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>2. Prenom</label>
+            <%= f.text_field :firstname, id: "home_type", class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>3. Nom</label>
+            <%= f.text_field :lastname, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>4. Montant du prêt</label>
+            <%= f.number_field :amount, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>5. Taux du prêt</label>
+            <%= f.number_field :rate, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="actions">
+        <%= f.submit "Soumettre la demande", class: 'btn btn-md btn-danger' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

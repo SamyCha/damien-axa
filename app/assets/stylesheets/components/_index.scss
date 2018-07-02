@@ -1,3 +1,34 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+
+
+// Homepage bakground image
+.background  {
+  background-image: url('background.jpg');
+  //background-color: grey;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 50vh;
+  color: purple;
+}
+
+section {
+padding-top: 4rem;
+
+}
+
+ul{
+     list-style:none;
+}
+
+.background-purple  {
+background-color: #c13ae0;
+opacity: 0.8;
+color: black;
+}
+
+h6 {
+  color: blue;
+}

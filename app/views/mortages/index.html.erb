@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<h1>Toutes les demandes de prêt</h1>
+<% if @mortages.count != 0 %>
+<% @mortages.order("id DESC").each do |mortage| %>
+<div class="col-xs-12">
+  <div class="panel panel-default box-shadow">
+    <div class="product">
+      <div class='product-upvote'>
+      </div>
+      <div class="product-image hidden-xs">
+      Date: <%= mortage.created_at %>
+      </div>
+      <div class='product-body'>
+        <h3><%= mortage.lastname  %></h3>
+        <h5><%= mortage.firstname %></h5>
+      </div>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li><%= mortage.amount %> euros <%= mortage.rate %> <%= mortage.referer %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<% end %>
+<% else %>
+<div class="row">
+  <div class="col-xs-12 text-left">
+  <h5>Il n'y a pas de demande de prêt à traiter</h5>
+  </div>
+</div>
+<% end %>
+</div>
